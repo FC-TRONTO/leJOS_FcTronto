@@ -1,0 +1,98 @@
+\hypertarget{class_leg_motors_controller}{}\section{Leg\+Motors\+Controller クラス}
+\label{class_leg_motors_controller}\index{LegMotorsController@{LegMotorsController}}
+
+
+足回りモーターの制御を行うクラス  
+
+
+
+
+Leg\+Motors\+Controller 連携図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=202pt]{d4/d01/class_leg_motors_controller__coll__graph}
+\end{center}
+\end{figure}
+\subsection*{公開メンバ関数}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{class_leg_motors_controller_afb404bdad1a5ce5d9f71b73ade3ccbb5}{Leg\+Motors\+Controller}} (Port left\+Morot\+Port, Port right\+Morot\+Port)
+\item 
+final boolean \mbox{\hyperlink{class_leg_motors_controller_ad5a3db7ac941bb2e66d3efb5e3214a54}{go\+Straight}} (int speed\+Percentage)
+\begin{DoxyCompactList}\small\item\em 直進処理 \end{DoxyCompactList}\item 
+final boolean \mbox{\hyperlink{class_leg_motors_controller_a0df4b63d6a21857d8b5fbff3875ff962}{turn}} (int speed\+Percentage)
+\begin{DoxyCompactList}\small\item\em 旋回処理 \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{詳解}
+足回りモーターの制御を行うクラス 
+
+ Leg\+Motors\+Controller.\+java の 16 行目に定義があります。
+
+
+
+\subsection{構築子と解体子}
+\mbox{\Hypertarget{class_leg_motors_controller_afb404bdad1a5ce5d9f71b73ade3ccbb5}\label{class_leg_motors_controller_afb404bdad1a5ce5d9f71b73ade3ccbb5}} 
+\index{LegMotorsController@{LegMotorsController}!LegMotorsController@{LegMotorsController}}
+\index{LegMotorsController@{LegMotorsController}!LegMotorsController@{LegMotorsController}}
+\subsubsection{\texorpdfstring{LegMotorsController()}{LegMotorsController()}}
+{\footnotesize\ttfamily Leg\+Motors\+Controller.\+Leg\+Motors\+Controller (\begin{DoxyParamCaption}\item[{Port}]{left\+Morot\+Port,  }\item[{Port}]{right\+Morot\+Port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+コンストラクタ 
+
+ Leg\+Motors\+Controller.\+java の 23 行目に定義があります。
+
+
+
+\subsection{関数詳解}
+\mbox{\Hypertarget{class_leg_motors_controller_ad5a3db7ac941bb2e66d3efb5e3214a54}\label{class_leg_motors_controller_ad5a3db7ac941bb2e66d3efb5e3214a54}} 
+\index{LegMotorsController@{LegMotorsController}!goStraight@{goStraight}}
+\index{goStraight@{goStraight}!LegMotorsController@{LegMotorsController}}
+\subsubsection{\texorpdfstring{goStraight()}{goStraight()}}
+{\footnotesize\ttfamily public final boolean Leg\+Motors\+Controller.\+go\+Straight (\begin{DoxyParamCaption}\item[{int}]{power }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+直進処理 
+
+
+\begin{DoxyParams}[1]{引数}
+\mbox{\texttt{ in}}  & {\em speed\+Percentage} & 直進速度比率(正の値の時前進、負の値の時後退) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean 引数異常の有無 
+\end{DoxyReturn}
+
+
+ Leg\+Motors\+Controller.\+java の 34 行目に定義があります。
+
+\mbox{\Hypertarget{class_leg_motors_controller_a0df4b63d6a21857d8b5fbff3875ff962}\label{class_leg_motors_controller_a0df4b63d6a21857d8b5fbff3875ff962}} 
+\index{LegMotorsController@{LegMotorsController}!turn@{turn}}
+\index{turn@{turn}!LegMotorsController@{LegMotorsController}}
+\subsubsection{\texorpdfstring{turn()}{turn()}}
+{\footnotesize\ttfamily public final boolean Leg\+Motors\+Controller.\+turn (\begin{DoxyParamCaption}\item[{int}]{power }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+旋回処理 
+
+
+\begin{DoxyParams}[1]{引数}
+\mbox{\texttt{ in}}  & {\em speed\+Ratio} & 旋回速度比率(正の値の時左旋回、負の値の時右旋回) \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean 引数異常の有無 
+\end{DoxyReturn}
+
+
+ Leg\+Motors\+Controller.\+java の 61 行目に定義があります。
+
+
+
+このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}
+\item 
+src/\mbox{\hyperlink{_leg_motors_controller_8java}{Leg\+Motors\+Controller.\+java}}\end{DoxyCompactItemize}

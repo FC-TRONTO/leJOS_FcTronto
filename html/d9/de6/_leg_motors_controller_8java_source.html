@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Test: src/LegMotorsController.java ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Test
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">LegMotorsController.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d9/de6/_leg_motors_controller_8java.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;<span class="keyword">import</span> lejos.hardware.motor.EV3LargeRegulatedMotor;</div><div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="keyword">import</span> lejos.hardware.port.Port;</div><div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="keyword">import</span> lejos.robotics.RegulatedMotor;</div><div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;</div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../dd/d39/class_leg_motors_controller.html">   16</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../dd/d39/class_leg_motors_controller.html">LegMotorsController</a> {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keyword">private</span> RegulatedMotor leftMotor;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keyword">private</span> RegulatedMotor rightMotor;</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;    </div><div class="line"><a name="l00023"></a><span class="lineno"><a class="line" href="../../dd/d39/class_leg_motors_controller.html#afb404bdad1a5ce5d9f71b73ade3ccbb5">   23</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../dd/d39/class_leg_motors_controller.html#afb404bdad1a5ce5d9f71b73ade3ccbb5">LegMotorsController</a>(Port leftMorotPort, Port rightMorotPort) {</div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;    leftMotor = <span class="keyword">new</span> EV3LargeRegulatedMotor(leftMorotPort);</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;    rightMotor = <span class="keyword">new</span> EV3LargeRegulatedMotor(rightMorotPort);</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;    }</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;    </div><div class="line"><a name="l00034"></a><span class="lineno"><a class="line" href="../../dd/d39/class_leg_motors_controller.html#ad5a3db7ac941bb2e66d3efb5e3214a54">   34</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keywordtype">boolean</span> <a class="code" href="../../dd/d39/class_leg_motors_controller.html#ad5a3db7ac941bb2e66d3efb5e3214a54">goStraight</a>(<span class="keywordtype">int</span> speedPercentage) {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;    <span class="comment">// 引数チェック</span></div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    <span class="keywordflow">if</span>(speedPercentage &gt; 100 || speedPercentage &lt; -100) {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// 引数不正</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    </div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;    <span class="comment">// 速度比率から速度を計算し、モーターに設定する</span></div><div class="line"><a name="l00042"></a><span class="lineno">   42</span>&#160;    setLegMotorsAbsSpeedByParcentage(speedPercentage, leftMotor, rightMotor);</div><div class="line"><a name="l00043"></a><span class="lineno">   43</span>&#160;    <span class="keywordflow">if</span>(speedPercentage &gt; 0) {</div><div class="line"><a name="l00044"></a><span class="lineno">   44</span>&#160;        <span class="comment">// 前進</span></div><div class="line"><a name="l00045"></a><span class="lineno">   45</span>&#160;        leftMotor.forward();</div><div class="line"><a name="l00046"></a><span class="lineno">   46</span>&#160;        rightMotor.forward();</div><div class="line"><a name="l00047"></a><span class="lineno">   47</span>&#160;    }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;        <span class="comment">// 後退</span></div><div class="line"><a name="l00049"></a><span class="lineno">   49</span>&#160;        leftMotor.backward();</div><div class="line"><a name="l00050"></a><span class="lineno">   50</span>&#160;        rightMotor.backward();</div><div class="line"><a name="l00051"></a><span class="lineno">   51</span>&#160;    }</div><div class="line"><a name="l00052"></a><span class="lineno">   52</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00053"></a><span class="lineno">   53</span>&#160;    }</div><div class="line"><a name="l00054"></a><span class="lineno">   54</span>&#160;    </div><div class="line"><a name="l00061"></a><span class="lineno"><a class="line" href="../../dd/d39/class_leg_motors_controller.html#a0df4b63d6a21857d8b5fbff3875ff962">   61</a></span>&#160;    <span class="keyword">public</span> <span class="keyword">final</span> <span class="keywordtype">boolean</span> <a class="code" href="../../dd/d39/class_leg_motors_controller.html#a0df4b63d6a21857d8b5fbff3875ff962">turn</a>(<span class="keywordtype">int</span> speedPercentage) {</div><div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;    <span class="comment">// 引数チェック</span></div><div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;    <span class="keywordflow">if</span>(speedPercentage &gt; 100 || speedPercentage &lt; -100) {</div><div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;        <span class="comment">// 引数不正</span></div><div class="line"><a name="l00065"></a><span class="lineno">   65</span>&#160;        <span class="keywordflow">return</span> <span class="keyword">false</span>;</div><div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;    }</div><div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    </div><div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    <span class="comment">// 速度比率から速度を計算し、モーターに設定する</span></div><div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;    setLegMotorsAbsSpeedByParcentage(speedPercentage, leftMotor, rightMotor);</div><div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;    <span class="keywordflow">if</span>(speedPercentage &gt; 0) {</div><div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        <span class="comment">// 左旋回</span></div><div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;        leftMotor.backward();</div><div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        rightMotor.forward();</div><div class="line"><a name="l00074"></a><span class="lineno">   74</span>&#160;    }<span class="keywordflow">else</span> {</div><div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;        <span class="comment">// 右旋回</span></div><div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;        leftMotor.forward();</div><div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;        rightMotor.backward();</div><div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;    }</div><div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;    <span class="keywordflow">return</span> <span class="keyword">true</span>;</div><div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div><div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    </div><div class="line"><a name="l00082"></a><span class="lineno">   82</span>&#160;    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keywordtype">float</span> getAbsSpeedByParcentage(<span class="keywordtype">int</span> speedPercentage) {</div><div class="line"><a name="l00083"></a><span class="lineno">   83</span>&#160;    <span class="keywordflow">return</span> (0.01f * Math.abs(speedPercentage) * Math.min(leftMotor.getMaxSpeed(), rightMotor.getMaxSpeed()));</div><div class="line"><a name="l00084"></a><span class="lineno">   84</span>&#160;    }</div><div class="line"><a name="l00085"></a><span class="lineno">   85</span>&#160;    </div><div class="line"><a name="l00086"></a><span class="lineno">   86</span>&#160;    <span class="keyword">private</span> <span class="keyword">final</span> <span class="keywordtype">void</span> setLegMotorsAbsSpeedByParcentage(<span class="keywordtype">int</span> speedPercentage, RegulatedMotor leftMotor, RegulatedMotor rightMotor) {</div><div class="line"><a name="l00087"></a><span class="lineno">   87</span>&#160;    <span class="keywordtype">int</span> speed = (int)getAbsSpeedByParcentage(speedPercentage);</div><div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;    <span class="comment">// スピード設定</span></div><div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;    leftMotor.setSpeed(speed);</div><div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;    rightMotor.setSpeed(speed);</div><div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;    }</div><div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;</div><div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;}</div><div class="ttc" id="class_leg_motors_controller_html_afb404bdad1a5ce5d9f71b73ade3ccbb5"><div class="ttname"><a href="../../dd/d39/class_leg_motors_controller.html#afb404bdad1a5ce5d9f71b73ade3ccbb5">LegMotorsController.LegMotorsController</a></div><div class="ttdeci">LegMotorsController(Port leftMorotPort, Port rightMorotPort)</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de6/_leg_motors_controller_8java_source.html#l00023">LegMotorsController.java:23</a></div></div>
+<div class="ttc" id="class_leg_motors_controller_html_ad5a3db7ac941bb2e66d3efb5e3214a54"><div class="ttname"><a href="../../dd/d39/class_leg_motors_controller.html#ad5a3db7ac941bb2e66d3efb5e3214a54">LegMotorsController.goStraight</a></div><div class="ttdeci">final boolean goStraight(int speedPercentage)</div><div class="ttdoc">直進処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de6/_leg_motors_controller_8java_source.html#l00034">LegMotorsController.java:34</a></div></div>
+<div class="ttc" id="class_leg_motors_controller_html"><div class="ttname"><a href="../../dd/d39/class_leg_motors_controller.html">LegMotorsController</a></div><div class="ttdoc">足回りモーターの制御を行うクラス</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de6/_leg_motors_controller_8java_source.html#l00016">LegMotorsController.java:16</a></div></div>
+<div class="ttc" id="class_leg_motors_controller_html_a0df4b63d6a21857d8b5fbff3875ff962"><div class="ttname"><a href="../../dd/d39/class_leg_motors_controller.html#a0df4b63d6a21857d8b5fbff3875ff962">LegMotorsController.turn</a></div><div class="ttdeci">final boolean turn(int speedPercentage)</div><div class="ttdoc">旋回処理</div><div class="ttdef"><b>Definition:</b> <a href="../../d9/de6/_leg_motors_controller_8java_source.html#l00061">LegMotorsController.java:61</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>
