@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['legmotorscontroller',['LegMotorsController',['../dd/d39/class_leg_motors_controller.html',1,'LegMotorsController'],['../dd/d39/class_leg_motors_controller.html#afb404bdad1a5ce5d9f71b73ade3ccbb5',1,'LegMotorsController.LegMotorsController()']]],
-  ['legmotorscontroller_2ejava',['LegMotorsController.java',['../d9/de6/_leg_motors_controller_8java.html',1,'']]]
+  ['irseekercontroller',['IrSeekerController',['../d6/dda/class_ir_seeker_controller.html',1,'IrSeekerController'],['../d6/dda/class_ir_seeker_controller.html#a5013fb830f68f74855f46d6748af1a71',1,'IrSeekerController.IrSeekerController()']]],
+  ['irseekercontroller_2ejava',['IrSeekerController.java',['../d1/d3e/_ir_seeker_controller_8java.html',1,'']]]
 ];

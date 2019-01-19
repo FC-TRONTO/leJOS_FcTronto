@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['legmotorscontroller',['LegMotorsController',['../dd/d39/class_leg_motors_controller.html#afb404bdad1a5ce5d9f71b73ade3ccbb5',1,'LegMotorsController']]]
+  ['irseekercontroller',['IrSeekerController',['../d6/dda/class_ir_seeker_controller.html#a5013fb830f68f74855f46d6748af1a71',1,'IrSeekerController']]]
 ];
