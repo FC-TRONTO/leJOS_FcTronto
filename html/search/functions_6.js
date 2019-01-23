@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['ultrasonicsensorcontroller',['UltrasonicSensorController',['../d0/d0d/class_ultrasonic_sensor_controller.html#aedb42488e2bdd7beabd4c3902ac4b58f',1,'UltrasonicSensorController']]]
+  ['turn',['turn',['../dd/d39/class_leg_motors_controller.html#a0df4b63d6a21857d8b5fbff3875ff962',1,'LegMotorsController']]]
 ];

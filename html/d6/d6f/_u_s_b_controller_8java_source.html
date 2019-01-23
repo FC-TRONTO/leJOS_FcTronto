@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.15"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>Test: src/USBController.java ソースファイル</title>
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">Test
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 構築: Doxygen 1.8.15 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+var searchBox = new SearchBox("searchBox", "../../search",false,'検索');
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:cf05388f2679ee054f2beb29a391d25f4e673ac3&amp;dn=gpl-2.0.txt GPL-v2 */
+$(function() {
+  initMenu('../../',true,false,'search.php','検索');
+  $(document).ready(function() { init_search(); });
+});
+/* @license-end */</script>
+<div id="main-nav"></div>
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div id="nav-path" class="navpath">
+  <ul>
+<li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li>  </ul>
+</div>
+</div><!-- top -->
+<div class="header">
+  <div class="headertitle">
+<div class="title">USBController.java</div>  </div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d6/d6f/_u_s_b_controller_8java.html">[詳解]</a><div class="fragment"><div class="line"><a name="l00001"></a><span class="lineno">    1</span>&#160;<span class="keyword">import</span> java.io.IOException;</div><div class="line"><a name="l00002"></a><span class="lineno">    2</span>&#160;</div><div class="line"><a name="l00003"></a><span class="lineno">    3</span>&#160;<span class="keyword">import</span> lejos.hardware.device.UART;</div><div class="line"><a name="l00004"></a><span class="lineno">    4</span>&#160;<span class="keyword">import</span> lejos.hardware.port.Port;</div><div class="line"><a name="l00005"></a><span class="lineno">    5</span>&#160;</div><div class="line"><a name="l00006"></a><span class="lineno"><a class="line" href="../../db/d49/class_u_s_b_controller.html">    6</a></span>&#160;<span class="keyword">public</span> <span class="keyword">class </span><a class="code" href="../../db/d49/class_u_s_b_controller.html">USBController</a> {</div><div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;    <span class="keyword">private</span> UART uart;</div><div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;    </div><div class="line"><a name="l00012"></a><span class="lineno"><a class="line" href="../../db/d49/class_u_s_b_controller.html#a83cc9657eb9075939d8ceec288854082">   12</a></span>&#160;    <span class="keyword">public</span> <a class="code" href="../../db/d49/class_u_s_b_controller.html#a83cc9657eb9075939d8ceec288854082">USBController</a>(Port uartPort) {</div><div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;    uart = <span class="keyword">new</span> UART(uartPort);</div><div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;    }</div><div class="line"><a name="l00015"></a><span class="lineno">   15</span>&#160;    </div><div class="line"><a name="l00016"></a><span class="lineno"><a class="line" href="../../db/d49/class_u_s_b_controller.html#a501ec097a24850ae2a6fae87c9b2eb8b">   16</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">int</span> <a class="code" href="../../db/d49/class_u_s_b_controller.html#a501ec097a24850ae2a6fae87c9b2eb8b">read</a>(<span class="keywordtype">byte</span>[] buff) {</div><div class="line"><a name="l00017"></a><span class="lineno">   17</span>&#160;    <span class="keywordtype">int</span> len = 0;</div><div class="line"><a name="l00018"></a><span class="lineno">   18</span>&#160;    <span class="keywordflow">while</span>(<span class="keyword">true</span>) {</div><div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;        <span class="keywordtype">int</span> len_diff = -1;</div><div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;        <span class="keywordflow">try</span> {</div><div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;        len_diff = uart.getInputStream().read(buff);</div><div class="line"><a name="l00022"></a><span class="lineno">   22</span>&#160;        } <span class="keywordflow">catch</span> (IOException e) {</div><div class="line"><a name="l00023"></a><span class="lineno">   23</span>&#160;        <span class="comment">// TODO 自動生成された catch ブロック</span></div><div class="line"><a name="l00024"></a><span class="lineno">   24</span>&#160;        e.printStackTrace();</div><div class="line"><a name="l00025"></a><span class="lineno">   25</span>&#160;        }</div><div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;        <span class="keywordflow">if</span>(len_diff &lt; 0) {</div><div class="line"><a name="l00027"></a><span class="lineno">   27</span>&#160;        <span class="keywordflow">return</span> len;</div><div class="line"><a name="l00028"></a><span class="lineno">   28</span>&#160;        }</div><div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;        len += len_diff;</div><div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;    }</div><div class="line"><a name="l00031"></a><span class="lineno">   31</span>&#160;    }</div><div class="line"><a name="l00032"></a><span class="lineno">   32</span>&#160;    </div><div class="line"><a name="l00033"></a><span class="lineno"><a class="line" href="../../db/d49/class_u_s_b_controller.html#afe8a9c9fdb005132410e327153c984f4">   33</a></span>&#160;    <span class="keyword">public</span> <span class="keywordtype">void</span> <a class="code" href="../../db/d49/class_u_s_b_controller.html#afe8a9c9fdb005132410e327153c984f4">write</a>(String input) {</div><div class="line"><a name="l00034"></a><span class="lineno">   34</span>&#160;    <span class="keywordflow">try</span> {</div><div class="line"><a name="l00035"></a><span class="lineno">   35</span>&#160;        uart.getOutputStream().write(input.getBytes());</div><div class="line"><a name="l00036"></a><span class="lineno">   36</span>&#160;    } <span class="keywordflow">catch</span> (IOException e) {</div><div class="line"><a name="l00037"></a><span class="lineno">   37</span>&#160;        <span class="comment">// TODO 自動生成された catch ブロック</span></div><div class="line"><a name="l00038"></a><span class="lineno">   38</span>&#160;        e.printStackTrace();</div><div class="line"><a name="l00039"></a><span class="lineno">   39</span>&#160;    }</div><div class="line"><a name="l00040"></a><span class="lineno">   40</span>&#160;    }</div><div class="line"><a name="l00041"></a><span class="lineno">   41</span>&#160;}</div><div class="ttc" id="class_u_s_b_controller_html_a501ec097a24850ae2a6fae87c9b2eb8b"><div class="ttname"><a href="../../db/d49/class_u_s_b_controller.html#a501ec097a24850ae2a6fae87c9b2eb8b">USBController.read</a></div><div class="ttdeci">int read(byte[] buff)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00016">USBController.java:16</a></div></div>
+<div class="ttc" id="class_u_s_b_controller_html_afe8a9c9fdb005132410e327153c984f4"><div class="ttname"><a href="../../db/d49/class_u_s_b_controller.html#afe8a9c9fdb005132410e327153c984f4">USBController.write</a></div><div class="ttdeci">void write(String input)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00033">USBController.java:33</a></div></div>
+<div class="ttc" id="class_u_s_b_controller_html_a83cc9657eb9075939d8ceec288854082"><div class="ttname"><a href="../../db/d49/class_u_s_b_controller.html#a83cc9657eb9075939d8ceec288854082">USBController.USBController</a></div><div class="ttdeci">USBController(Port uartPort)</div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00012">USBController.java:12</a></div></div>
+<div class="ttc" id="class_u_s_b_controller_html"><div class="ttname"><a href="../../db/d49/class_u_s_b_controller.html">USBController</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00006">USBController.java:6</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+<!-- start footer part -->
+<hr class="footer"/><address class="footer"><small>
+構築: &#160;<a href="http://www.doxygen.org/index.html">
+<img class="footer" src="../../doxygen.png" alt="doxygen"/>
+</a> 1.8.15
+</small></address>
+</body>
+</html>

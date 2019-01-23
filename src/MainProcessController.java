@@ -1,9 +1,11 @@
 import lejos.hardware.BrickFinder;
 import lejos.hardware.ev3.EV3;
 import lejos.hardware.lcd.TextLCD;
+import lejos.hardware.motor.EV3LargeRegulatedMotor;
 import lejos.hardware.port.MotorPort;
 import lejos.hardware.port.Port;
 import lejos.hardware.port.SensorPort;
+import lejos.robotics.RegulatedMotor;
 import lejos.utility.Delay;
 
 public class MainProcessController {
@@ -12,6 +14,7 @@ public class MainProcessController {
     private static final Port SENSORPORT_SONAR = SensorPort.S2; // 超音波センサーポート
     private static final Port MOTORPORT_LEFT = MotorPort.A; // 左モーターポート
     private static final Port MOTORPORT_RIGHT = MotorPort.B; // 右モーターポート
+    private static final Port MOTORPORT_DRIBBLE = MotorPort.D; // ドリブルモーターポート
     private static final float THRESHOLD_BALL_DETECT = 0.05f;
     private static final int CORRECTION_VALUE_SPEED = 10;
 
@@ -20,6 +23,7 @@ public class MainProcessController {
     private UltrasonicSensorController ultrasonicSensorController;
     private EV3 ev3;
     private TextLCD lcd;
+    RegulatedMotor dribbleMotor;
 
     private enum MainStateE {
 	HAVE_BALL, NOT_HAVE_BALL;
@@ -31,6 +35,11 @@ public class MainProcessController {
 	ultrasonicSensorController = new UltrasonicSensorController(SENSORPORT_SONAR);
 	ev3 = (EV3) BrickFinder.getLocal();
 	lcd = ev3.getTextLCD();
+	dribbleMotor = new EV3LargeRegulatedMotor(MOTORPORT_DRIBBLE);
+	// スピード設定
+	dribbleMotor.setSpeed((int) dribbleMotor.getMaxSpeed());
+	// 前進
+	dribbleMotor.forward();
     }
 
     public void execMainProcess() {
