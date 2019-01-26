@@ -32,4 +32,16 @@ public class IrSeekerController {
 	modulatedMode.fetchSample(sampleAngle, 0);
         return sampleAngle[0];
     }
+    
+    /*!
+     * 赤外線センサーによりボールとの角度をint型で取得する
+     * @return ボールとの角度
+     */
+    public final int getIrSeekerAngleByInt() {
+	modulatedMode.fetchSample(sampleAngle, 0);
+	if (Float.isNaN(sampleAngle[0])) {
+	    return 180;
+	}
+	return (int)sampleAngle[0];
+    }
 }
