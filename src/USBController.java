@@ -6,7 +6,8 @@ import lejos.hardware.device.UART;
 import lejos.hardware.port.Port;
 
 public class USBController implements Runnable {
-    private UART uart;
+    private UART uartSend;
+    private UART uartRecv;
     private final int NUM_OF_STORED_VALUE = 2;
     private final int READ_BUFF_SIZE = 128;
     private int leftMotorPower = 0;
@@ -15,8 +16,9 @@ public class USBController implements Runnable {
     /*!
      * コンストラクタ
      */
-    public USBController(Port uartPort) {
-	uart = new UART(uartPort);
+    public USBController(Port sendPort, Port recvPort) {
+	uartSend = new UART(sendPort);
+	uartRecv = new UART(recvPort);
     }
 
     public void run() {
@@ -27,7 +29,7 @@ public class USBController implements Runnable {
 
     public void write(String input) {
 	try {
-	    uart.getOutputStream().write(input.getBytes());
+	    uartSend.getOutputStream().write(input.getBytes());
 	} catch (IOException e) {
 	    // TODO 自動生成された catch ブロック
 	    e.printStackTrace();
@@ -64,7 +66,7 @@ public class USBController implements Runnable {
 	try {
 	    int read = -1;
 	    int totalLen = 0;
-	    while((read = uart.getInputStream().read()) != 10) {
+	    while((read = uartRecv.getInputStream().read()) != 10) {
 		if(read != -1) {
 		    buff[totalLen] = (byte)read;
 		    //System.out.printf("totalLen = %d, read = %d\n", totalLen, read);

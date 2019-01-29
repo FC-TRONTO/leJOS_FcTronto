@@ -10,15 +10,16 @@ import lejos.utility.Delay;
 
 public class MainProcessController {
     // 定数定義
-    private static final Port SENSORPORT_IRSEEKER = SensorPort.S1; // 赤外線センサーポート
-    private static final Port SENSORPORT_SONAR = SensorPort.S2; // 超音波センサーポート
-    private static final Port SENSORPORT_SERIAL = SensorPort.S3; // シリアル通信ポート
-    private static final Port MOTORPORT_LEFT = MotorPort.A; // 左モーターポート
-    private static final Port MOTORPORT_RIGHT = MotorPort.B; // 右モーターポート
-    private static final Port MOTORPORT_DRIBBLE = MotorPort.D; // ドリブルモーターポート
+    private static final Port SENSORPORT_IRSEEKER = SensorPort.S1;	// 赤外線センサーポート
+    private static final Port SENSORPORT_SONAR = SensorPort.S2;		// 超音波センサーポート
+    private static final Port SENSORPORT_SERIAL_SEND = SensorPort.S3;	// シリアル通信(送信)ポート
+    private static final Port SENSORPORT_SERIAL_RECV = SensorPort.S4;	// シリアル通信(受信)ポート
+    private static final Port MOTORPORT_LEFT = MotorPort.A;		// 左モーターポート
+    private static final Port MOTORPORT_RIGHT = MotorPort.B;		// 右モーターポート
+    private static final Port MOTORPORT_DRIBBLE = MotorPort.D;		// ドリブルモーターポート
     private static final float THRESHOLD_BALL_DETECT = 0.05f;
     private static final int CORRECTION_VALUE_SPEED = 10;
-    private static final int DELAY_MS_MAIN_LOOP = 100; // メイン関数のループ間隔[ms]
+    private static final int DELAY_MS_MAIN_LOOP = 100; 			// メイン関数のループ間隔[ms]
 
     private IrSeekerController irSeekerController;
     private LegMotorsController legMotorsController;
@@ -36,7 +37,7 @@ public class MainProcessController {
 	irSeekerController = new IrSeekerController(SENSORPORT_IRSEEKER);
 	//legMotorsController = new LegMotorsController(MOTORPORT_LEFT, MOTORPORT_RIGHT);
 	//ultrasonicSensorController = new UltrasonicSensorController(SENSORPORT_SONAR);
-	usbController = new USBController(SENSORPORT_SERIAL);
+	usbController = new USBController(SENSORPORT_SERIAL_SEND, SENSORPORT_SERIAL_RECV);
 	ev3 = (EV3) BrickFinder.getLocal();
 	lcd = ev3.getTextLCD();
 	//dribbleMotor = new EV3LargeRegulatedMotor(MOTORPORT_DRIBBLE);
@@ -129,5 +130,6 @@ public class MainProcessController {
 	int[] motorPowers = usbController.getMotorPowers();
 	lcd.drawString("LEFT_MOTOR = " + motorPowers[0], 1, 2);
 	lcd.drawString("RIGIT_MOTOR = " + motorPowers[1], 1, 3);
+	legMotorsController.setMotorPower(motorPowers[0], motorPowers[1]);
     }
 }

@@ -79,6 +79,35 @@ public class LegMotorsController {
 	return true;
     }
     
+    /*!
+     * @fn public final boolean setMotorPower(int leftPower, int rightPower)
+     * @brief モータ回転速度設定
+     * @param[in] leftPower 左モータ速度[-100,100]
+     * @param[in] rightPower 右モータ速度[-100,100]
+     * @return boolean 引数異常の有無
+     */
+    public final boolean setMotorPower(int leftPower, int rightPower) {
+	// 引数チェック
+	if((leftPower > 100 || leftPower < -100) || (rightPower > 100 || rightPower < -100)) {
+	    // 引数不正
+	    return false;
+	}
+	
+	// 引数から速度を計算し、モーターに設定する
+	setEachLegMotorsAbsSpeedByParcentage(leftPower, rightPower, leftMotor, rightMotor);
+	if(leftPower > 0) {
+	    leftMotor.forward();
+	}else {
+	    leftMotor.backward();
+	}
+	if(rightPower > 0) {
+	    rightMotor.forward();
+	}else {
+	    rightMotor.backward();
+	}
+	return true;
+    }
+    
     private final float getAbsSpeedByParcentage(int speedPercentage) {
 	return (0.01f * Math.abs(speedPercentage) * Math.min(leftMotor.getMaxSpeed(), rightMotor.getMaxSpeed()));
     }
@@ -88,6 +117,12 @@ public class LegMotorsController {
 	// スピード設定
 	leftMotor.setSpeed(speed);
 	rightMotor.setSpeed(speed);
+    }
+    
+    private final void setEachLegMotorsAbsSpeedByParcentage(int leftSpeedPercentage, int rightSpeedPercentage, RegulatedMotor leftMotor, RegulatedMotor rightMotor) {
+	// スピード設定
+	leftMotor.setSpeed((int)getAbsSpeedByParcentage(leftSpeedPercentage));
+	rightMotor.setSpeed((int)getAbsSpeedByParcentage(rightSpeedPercentage));
     }
 
 }
