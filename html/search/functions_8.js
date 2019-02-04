@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['write',['write',['../db/d49/class_u_s_b_controller.html#afe8a9c9fdb005132410e327153c984f4',1,'USBController']]]
+  ['ultrasonicsensorcontroller',['UltrasonicSensorController',['../d0/d0d/class_ultrasonic_sensor_controller.html#aedb42488e2bdd7beabd4c3902ac4b58f',1,'UltrasonicSensorController']]],
+  ['usbcontroller',['USBController',['../db/d49/class_u_s_b_controller.html#a66b64f29e68b4e068f0ba57a8c544782',1,'USBController']]]
 ];

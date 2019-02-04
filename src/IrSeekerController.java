@@ -30,6 +30,9 @@ public class IrSeekerController {
      */
     public final float getIrSeekerAngle() {
 	modulatedMode.fetchSample(sampleAngle, 0);
+	for(int i = 0; i < sampleAngle.length; i++) {
+	    System.out.printf("sampleAngle[%d] = %f¥n", i, sampleAngle[i]);
+	}
         return sampleAngle[0];
     }
     

@@ -7,7 +7,8 @@
 
 
 
-Leg\+Motors\+Controller 連携図\nopagebreak
+Leg\+Motors\+Controller 連携図
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -22,7 +23,9 @@ Leg\+Motors\+Controller 連携図\nopagebreak
 final boolean \mbox{\hyperlink{class_leg_motors_controller_ad5a3db7ac941bb2e66d3efb5e3214a54}{go\+Straight}} (int speed\+Percentage)
 \begin{DoxyCompactList}\small\item\em 直進処理 \end{DoxyCompactList}\item 
 final boolean \mbox{\hyperlink{class_leg_motors_controller_a0df4b63d6a21857d8b5fbff3875ff962}{turn}} (int speed\+Percentage)
-\begin{DoxyCompactList}\small\item\em 旋回処理 \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em 旋回処理 \end{DoxyCompactList}\item 
+final boolean \mbox{\hyperlink{class_leg_motors_controller_ae5857bf258e2820255f1b5775140385a}{set\+Motor\+Power}} (int left\+Power, int right\+Power)
+\begin{DoxyCompactList}\small\item\em モータ回転速度設定 \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{詳解}
@@ -67,6 +70,30 @@ boolean 引数異常の有無
 
 
  Leg\+Motors\+Controller.\+java の 34 行目に定義があります。
+
+\mbox{\Hypertarget{class_leg_motors_controller_ae5857bf258e2820255f1b5775140385a}\label{class_leg_motors_controller_ae5857bf258e2820255f1b5775140385a}} 
+\index{LegMotorsController@{LegMotorsController}!setMotorPower@{setMotorPower}}
+\index{setMotorPower@{setMotorPower}!LegMotorsController@{LegMotorsController}}
+\subsubsection{\texorpdfstring{setMotorPower()}{setMotorPower()}}
+{\footnotesize\ttfamily public final boolean Leg\+Motors\+Controller.\+set\+Motor\+Power (\begin{DoxyParamCaption}\item[{int}]{left\+Power,  }\item[{int}]{right\+Power }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+モータ回転速度設定 
+
+
+\begin{DoxyParams}[1]{引数}
+\mbox{\texttt{ in}}  & {\em left\+Power} & 左モータ速度\mbox{[}-\/100,100\mbox{]} \\
+\hline
+\mbox{\texttt{ in}}  & {\em right\+Power} & 右モータ速度\mbox{[}-\/100,100\mbox{]} \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{戻り値}
+boolean 引数異常の有無 
+\end{DoxyReturn}
+
+
+ Leg\+Motors\+Controller.\+java の 89 行目に定義があります。
 
 \mbox{\Hypertarget{class_leg_motors_controller_a0df4b63d6a21857d8b5fbff3875ff962}\label{class_leg_motors_controller_a0df4b63d6a21857d8b5fbff3875ff962}} 
 \index{LegMotorsController@{LegMotorsController}!turn@{turn}}

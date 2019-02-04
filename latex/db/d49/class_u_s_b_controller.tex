@@ -2,55 +2,77 @@
 \label{class_u_s_b_controller}\index{USBController@{USBController}}
 
 
+U\+S\+B\+Controller の継承関係図
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=184pt]{de/d83/class_u_s_b_controller__inherit__graph}
+\end{center}
+\end{figure}
+
+
 U\+S\+B\+Controller 連携図
 \nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=175pt]{d2/d26/class_u_s_b_controller__coll__graph}
+\includegraphics[width=184pt]{d2/d26/class_u_s_b_controller__coll__graph}
 \end{center}
 \end{figure}
 \subsection*{公開メンバ関数}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\hyperlink{class_u_s_b_controller_a83cc9657eb9075939d8ceec288854082}{U\+S\+B\+Controller}} (Port uart\+Port)
+\mbox{\hyperlink{class_u_s_b_controller_a66b64f29e68b4e068f0ba57a8c544782}{U\+S\+B\+Controller}} (Port send\+Port, Port recv\+Port)
 \item 
-int \mbox{\hyperlink{class_u_s_b_controller_a501ec097a24850ae2a6fae87c9b2eb8b}{read}} (byte\mbox{[}$\,$\mbox{]} buff)
+void \mbox{\hyperlink{class_u_s_b_controller_a3764a01faaee1b82985a787c44a4dab1}{run}} ()
 \item 
 void \mbox{\hyperlink{class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4}{write}} (String input)
+\item 
+int \mbox{[}$\,$\mbox{]} \mbox{\hyperlink{class_u_s_b_controller_abd4b47f1e86159dfd7ab01ad28f21b40}{get\+Motor\+Powers}} ()
 \end{DoxyCompactItemize}
 
 
 \subsection{詳解}
 
 
- U\+S\+B\+Controller.\+java の 6 行目に定義があります。
+ U\+S\+B\+Controller.\+java の 8 行目に定義があります。
 
 
 
 \subsection{構築子と解体子}
-\mbox{\Hypertarget{class_u_s_b_controller_a83cc9657eb9075939d8ceec288854082}\label{class_u_s_b_controller_a83cc9657eb9075939d8ceec288854082}} 
+\mbox{\Hypertarget{class_u_s_b_controller_a66b64f29e68b4e068f0ba57a8c544782}\label{class_u_s_b_controller_a66b64f29e68b4e068f0ba57a8c544782}} 
 \index{USBController@{USBController}!USBController@{USBController}}
 \index{USBController@{USBController}!USBController@{USBController}}
 \subsubsection{\texorpdfstring{USBController()}{USBController()}}
-{\footnotesize\ttfamily U\+S\+B\+Controller.\+U\+S\+B\+Controller (\begin{DoxyParamCaption}\item[{Port}]{uart\+Port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily U\+S\+B\+Controller.\+U\+S\+B\+Controller (\begin{DoxyParamCaption}\item[{Port}]{send\+Port,  }\item[{Port}]{recv\+Port }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 コンストラクタ 
 
- U\+S\+B\+Controller.\+java の 12 行目に定義があります。
+ U\+S\+B\+Controller.\+java の 19 行目に定義があります。
 
 
 
 \subsection{関数詳解}
-\mbox{\Hypertarget{class_u_s_b_controller_a501ec097a24850ae2a6fae87c9b2eb8b}\label{class_u_s_b_controller_a501ec097a24850ae2a6fae87c9b2eb8b}} 
-\index{USBController@{USBController}!read@{read}}
-\index{read@{read}!USBController@{USBController}}
-\subsubsection{\texorpdfstring{read()}{read()}}
-{\footnotesize\ttfamily int U\+S\+B\+Controller.\+read (\begin{DoxyParamCaption}\item[{byte \mbox{[}$\,$\mbox{]}}]{buff }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+\mbox{\Hypertarget{class_u_s_b_controller_abd4b47f1e86159dfd7ab01ad28f21b40}\label{class_u_s_b_controller_abd4b47f1e86159dfd7ab01ad28f21b40}} 
+\index{USBController@{USBController}!getMotorPowers@{getMotorPowers}}
+\index{getMotorPowers@{getMotorPowers}!USBController@{USBController}}
+\subsubsection{\texorpdfstring{getMotorPowers()}{getMotorPowers()}}
+{\footnotesize\ttfamily int \mbox{[}$\,$\mbox{]} U\+S\+B\+Controller.\+get\+Motor\+Powers (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
- U\+S\+B\+Controller.\+java の 16 行目に定義があります。
+ U\+S\+B\+Controller.\+java の 39 行目に定義があります。
+
+\mbox{\Hypertarget{class_u_s_b_controller_a3764a01faaee1b82985a787c44a4dab1}\label{class_u_s_b_controller_a3764a01faaee1b82985a787c44a4dab1}} 
+\index{USBController@{USBController}!run@{run}}
+\index{run@{run}!USBController@{USBController}}
+\subsubsection{\texorpdfstring{run()}{run()}}
+{\footnotesize\ttfamily void U\+S\+B\+Controller.\+run (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+ U\+S\+B\+Controller.\+java の 24 行目に定義があります。
 
 \mbox{\Hypertarget{class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4}\label{class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4}} 
 \index{USBController@{USBController}!write@{write}}
@@ -60,16 +82,8 @@ void \mbox{\hyperlink{class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4}{
 
 
 
- U\+S\+B\+Controller.\+java の 33 行目に定義があります。
+ U\+S\+B\+Controller.\+java の 30 行目に定義があります。
 
-被呼び出し関係図\+:
-\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=299pt]{db/d49/class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4_icgraph}
-\end{center}
-\end{figure}
 
 
 このクラス詳解は次のファイルから抽出されました\+:\begin{DoxyCompactItemize}

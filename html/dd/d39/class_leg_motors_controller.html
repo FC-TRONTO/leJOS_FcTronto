@@ -76,7 +76,7 @@ LegMotorsController 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d4/d01/class_leg_motors_controller__coll__graph.png" border="0" usemap="#_leg_motors_controller_coll__map" alt="Collaboration graph"/></div>
 <map name="_leg_motors_controller_coll__map" id="_leg_motors_controller_coll__map">
-<area shape="rect"  title="è¶³åãã¢ã¼ã¿ã¼ã®å¶å¾¡ãè¡ãã¯ã©ã¹" alt="" coords="5,5,168,105"/>
+<area shape="rect"  title="è¶³åãã¢ã¼ã¿ã¼ã®å¶å¾¡ãè¡ãã¯ã©ã¹" alt="" coords="5,5,168,119"/>
 </map>
 </div>
 <table class="memberdecls">
@@ -90,6 +90,9 @@ LegMotorsController 連携図</div>
 <tr class="memitem:a0df4b63d6a21857d8b5fbff3875ff962"><td class="memItemLeft" align="right" valign="top">final boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d39/class_leg_motors_controller.html#a0df4b63d6a21857d8b5fbff3875ff962">turn</a> (int speedPercentage)</td></tr>
 <tr class="memdesc:a0df4b63d6a21857d8b5fbff3875ff962"><td class="mdescLeft">&#160;</td><td class="mdescRight">旋回処理  <a href="#a0df4b63d6a21857d8b5fbff3875ff962">[詳解]</a><br /></td></tr>
 <tr class="separator:a0df4b63d6a21857d8b5fbff3875ff962"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae5857bf258e2820255f1b5775140385a"><td class="memItemLeft" align="right" valign="top">final boolean&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d39/class_leg_motors_controller.html#ae5857bf258e2820255f1b5775140385a">setMotorPower</a> (int leftPower, int rightPower)</td></tr>
+<tr class="memdesc:ae5857bf258e2820255f1b5775140385a"><td class="mdescLeft">&#160;</td><td class="mdescRight">モータ回転速度設定  <a href="#ae5857bf258e2820255f1b5775140385a">[詳解]</a><br /></td></tr>
+<tr class="separator:ae5857bf258e2820255f1b5775140385a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock"><p>足回りモーターの制御を行うクラス </p>
@@ -170,6 +173,54 @@ LegMotorsController 連携図</div>
 <dl class="section return"><dt>戻り値</dt><dd>boolean 引数異常の有無 </dd></dl>
 
 <p class="definition"> <a class="el" href="../../d9/de6/_leg_motors_controller_8java_source.html">LegMotorsController.java</a> の <a class="el" href="../../d9/de6/_leg_motors_controller_8java_source.html#l00034">34</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="ae5857bf258e2820255f1b5775140385a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae5857bf258e2820255f1b5775140385a">&#9670;&nbsp;</a></span>setMotorPower()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">public final boolean LegMotorsController.setMotorPower </td>
+          <td>(</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>leftPower</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>rightPower</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>モータ回転速度設定 </p>
+<dl class="params"><dt>引数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">leftPower</td><td>左モータ速度[-100,100] </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">rightPower</td><td>右モータ速度[-100,100] </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>戻り値</dt><dd>boolean 引数異常の有無 </dd></dl>
+
+<p class="definition"> <a class="el" href="../../d9/de6/_leg_motors_controller_8java_source.html">LegMotorsController.java</a> の <a class="el" href="../../d9/de6/_leg_motors_controller_8java_source.html#l00089">89</a> 行目に定義があります。</p>
 
 </div>
 </div>

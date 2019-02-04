@@ -69,29 +69,41 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
+USBController の継承関係図</div>
+<div class="dyncontent">
+<div class="center"><img src="../../de/d83/class_u_s_b_controller__inherit__graph.png" border="0" usemap="#_u_s_b_controller_inherit__map" alt="Inheritance graph"/></div>
+<map name="_u_s_b_controller_inherit__map" id="_u_s_b_controller_inherit__map">
+<area shape="rect"  title=" " alt="" coords="5,127,144,240"/>
+<area shape="rect"  title=" " alt="" coords="36,5,114,79"/>
+</map>
+</div>
+<div class="dynheader">
 USBController 連携図</div>
 <div class="dyncontent">
 <div class="center"><img src="../../d2/d26/class_u_s_b_controller__coll__graph.png" border="0" usemap="#_u_s_b_controller_coll__map" alt="Collaboration graph"/></div>
 <map name="_u_s_b_controller_coll__map" id="_u_s_b_controller_coll__map">
-<area shape="rect"  title=" " alt="" coords="5,5,132,105"/>
+<area shape="rect"  title=" " alt="" coords="5,127,144,240"/>
+<area shape="rect"  title=" " alt="" coords="36,5,114,79"/>
 </map>
 </div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 公開メンバ関数</h2></td></tr>
-<tr class="memitem:a83cc9657eb9075939d8ceec288854082"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/class_u_s_b_controller.html#a83cc9657eb9075939d8ceec288854082">USBController</a> (Port uartPort)</td></tr>
-<tr class="separator:a83cc9657eb9075939d8ceec288854082"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a501ec097a24850ae2a6fae87c9b2eb8b"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/class_u_s_b_controller.html#a501ec097a24850ae2a6fae87c9b2eb8b">read</a> (byte[] buff)</td></tr>
-<tr class="separator:a501ec097a24850ae2a6fae87c9b2eb8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a66b64f29e68b4e068f0ba57a8c544782"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/class_u_s_b_controller.html#a66b64f29e68b4e068f0ba57a8c544782">USBController</a> (Port sendPort, Port recvPort)</td></tr>
+<tr class="separator:a66b64f29e68b4e068f0ba57a8c544782"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3764a01faaee1b82985a787c44a4dab1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/class_u_s_b_controller.html#a3764a01faaee1b82985a787c44a4dab1">run</a> ()</td></tr>
+<tr class="separator:a3764a01faaee1b82985a787c44a4dab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe8a9c9fdb005132410e327153c984f4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/class_u_s_b_controller.html#afe8a9c9fdb005132410e327153c984f4">write</a> (String input)</td></tr>
 <tr class="separator:afe8a9c9fdb005132410e327153c984f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abd4b47f1e86159dfd7ab01ad28f21b40"><td class="memItemLeft" align="right" valign="top">int []&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d49/class_u_s_b_controller.html#abd4b47f1e86159dfd7ab01ad28f21b40">getMotorPowers</a> ()</td></tr>
+<tr class="separator:abd4b47f1e86159dfd7ab01ad28f21b40"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">詳解</h2>
 <div class="textblock">
-<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00006">6</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00008">8</a> 行目に定義があります。</p>
 </div><h2 class="groupheader">構築子と解体子</h2>
-<a id="a83cc9657eb9075939d8ceec288854082"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a83cc9657eb9075939d8ceec288854082">&#9670;&nbsp;</a></span>USBController()</h2>
+<a id="a66b64f29e68b4e068f0ba57a8c544782"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a66b64f29e68b4e068f0ba57a8c544782">&#9670;&nbsp;</a></span>USBController()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -103,8 +115,18 @@ USBController 連携図</div>
           <td class="memname">USBController.USBController </td>
           <td>(</td>
           <td class="paramtype">Port&#160;</td>
-          <td class="paramname"><em>uartPort</em></td><td>)</td>
+          <td class="paramname"><em>sendPort</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Port&#160;</td>
+          <td class="paramname"><em>recvPort</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -115,13 +137,13 @@ USBController 連携図</div>
 </div><div class="memdoc">
 <p>コンストラクタ </p>
 
-<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00012">12</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00019">19</a> 行目に定義があります。</p>
 
 </div>
 </div>
 <h2 class="groupheader">関数詳解</h2>
-<a id="a501ec097a24850ae2a6fae87c9b2eb8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a501ec097a24850ae2a6fae87c9b2eb8b">&#9670;&nbsp;</a></span>read()</h2>
+<a id="abd4b47f1e86159dfd7ab01ad28f21b40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abd4b47f1e86159dfd7ab01ad28f21b40">&#9670;&nbsp;</a></span>getMotorPowers()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -130,10 +152,9 @@ USBController 連携図</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">int USBController.read </td>
+          <td class="memname">int [] USBController.getMotorPowers </td>
           <td>(</td>
-          <td class="paramtype">byte []&#160;</td>
-          <td class="paramname"><em>buff</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -144,7 +165,34 @@ USBController 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00016">16</a> 行目に定義があります。</p>
+<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00039">39</a> 行目に定義があります。</p>
+
+</div>
+</div>
+<a id="a3764a01faaee1b82985a787c44a4dab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3764a01faaee1b82985a787c44a4dab1">&#9670;&nbsp;</a></span>run()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void USBController.run </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00024">24</a> 行目に定義があります。</p>
 
 </div>
 </div>
@@ -172,16 +220,7 @@ USBController 連携図</div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00033">33</a> 行目に定義があります。</p>
-<div class="dynheader">
-被呼び出し関係図:</div>
-<div class="dyncontent">
-<div class="center"><img src="../../db/d49/class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4_icgraph.png" border="0" usemap="#db/d49/class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4_icgraph" alt=""/></div>
-<map name="db/d49/class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4_icgraph" id="db/d49/class_u_s_b_controller_afe8a9c9fdb005132410e327153c984f4_icgraph">
-<area shape="rect"  title=" " alt="" coords="160,5,298,31"/>
-<area shape="rect"  href="../../d0/d50/class_fc_tronto.html#a3e0328e996d4755d3624e9217c5848dc" title=" " alt="" coords="5,5,112,31"/>
-</map>
-</div>
+<p class="definition"> <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html">USBController.java</a> の <a class="el" href="../../d6/d6f/_u_s_b_controller_8java_source.html#l00030">30</a> 行目に定義があります。</p>
 
 </div>
 </div>
