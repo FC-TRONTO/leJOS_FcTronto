@@ -1,3 +1,4 @@
+import lejos.hardware.Audio;
 import lejos.hardware.BrickFinder;
 import lejos.hardware.ev3.EV3;
 import lejos.hardware.lcd.TextLCD;
@@ -26,6 +27,7 @@ public class MainProcessController {
     private UltrasonicSensorController ultrasonicSensorController;
     private EV3 ev3;
     private TextLCD lcd;
+    private Audio audio;
     private USBController usbController;
     RegulatedMotor dribbleMotor;
 
@@ -34,12 +36,14 @@ public class MainProcessController {
     }
 
     public MainProcessController() {
+	ev3 = (EV3) BrickFinder.getLocal();
+	lcd = ev3.getTextLCD();
+	audio = ev3.getAudio();
+	
 	//irSeekerController = new IrSeekerController(SENSORPORT_IRSEEKER);
 	legMotorsController = new LegMotorsController(MOTORPORT_LEFT, MOTORPORT_RIGHT);
 	//ultrasonicSensorController = new UltrasonicSensorController(SENSORPORT_SONAR);
-	usbController = new USBController(SENSORPORT_SERIAL_SEND, SENSORPORT_SERIAL_RECV);
-	ev3 = (EV3) BrickFinder.getLocal();
-	lcd = ev3.getTextLCD();
+	usbController = new USBController(SENSORPORT_SERIAL_SEND, SENSORPORT_SERIAL_RECV, audio);
 	dribbleMotor = new EV3LargeRegulatedMotor(MOTORPORT_DRIBBLE);
 	// スピード設定
 	dribbleMotor.setSpeed((int) dribbleMotor.getMaxSpeed());

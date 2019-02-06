@@ -2,12 +2,14 @@ import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
 
+import lejos.hardware.Audio;
 import lejos.hardware.device.UART;
 import lejos.hardware.port.Port;
 
 public class USBController implements Runnable {
     private UART uartSend;
     private UART uartRecv;
+    private Audio audio;
     private final int NUM_OF_STORED_VALUE = 2;
     private final int READ_BUFF_SIZE = 128;
     private int leftMotorPower = 0;
@@ -16,9 +18,10 @@ public class USBController implements Runnable {
     /*!
      * コンストラクタ
      */
-    public USBController(Port sendPort, Port recvPort) {
+    public USBController(Port sendPort, Port recvPort, Audio ev3Audio) {
 	uartSend = new UART(sendPort);
 	uartRecv = new UART(recvPort);
+	audio = ev3Audio;
     }
 
     public void run() {
@@ -77,6 +80,8 @@ public class USBController implements Runnable {
 		    totalLen++;
 		}
 	    }
+	    audio.playTone(659, 100);
+	    audio.playTone(880, 100);
 	} catch (IOException e) {
 	    // TODO 自動生成された catch ブロック
 	    e.printStackTrace();
