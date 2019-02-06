@@ -54,8 +54,12 @@ public class USBController implements Runnable {
 	    //System.out.printf("length = %d\n", readDatas.length);
 	    // 読めたデータ数が正しければモータの値として記憶する
 	    if(readDatas.length == NUM_OF_STORED_VALUE) {
-		leftMotorPower = Integer.parseInt(readDatas[0]);
-		rightMotorPower = Integer.parseInt(readDatas[1]);
+		try {
+		    leftMotorPower = Integer.parseInt(readDatas[0]);
+		    rightMotorPower = Integer.parseInt(readDatas[1]);
+		} catch (NumberFormatException e) {
+		    System.out.println("serial recv parseInt Error");
+		}
 	    }
 	}
 

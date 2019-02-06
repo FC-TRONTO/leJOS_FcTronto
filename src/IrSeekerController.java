@@ -33,9 +33,11 @@ public class IrSeekerController {
      */
     public final float getIrSeekerAngle() {
 	modulatedMode.fetchSample(sampleAngle, 0);
+	/*
 	for(int i = 0; i < sampleAngle.length; i++) {
 	    System.out.printf("sampleAngle[%d] = %f¥n", i, sampleAngle[i]);
 	}
+	*/
         return sampleAngle[0];
     }
     
@@ -57,6 +59,11 @@ public class IrSeekerController {
      */
     public final float[] getIrSeekerAngleAndDistanceByFloat() {
 	modulatedMode.fetchSample(sampleAngle, 0);
+	/*
+	for(int i = 0; i < sampleAngle.length; i++) {
+	    System.out.printf("sampleAngle[%d] = %f\n", i, sampleAngle[i]);
+	}
+	*/
 	return getAngleAndDistanceFromSample(sampleAngle);
     }
     
@@ -84,9 +91,11 @@ public class IrSeekerController {
 	if(Math.abs(firstIndex - secondIndex) == 1 && (firstValue - secondValue) < (firstValue / DIS_CORRECTION_COEFFICIENT)) {
 	    returnValues[0] = (firstIndex + secondIndex) / 2.f;
 	}
+	/*
 	for(int i = 0; i < returnValues.length; i++) {
-	    System.out.printf("returnValues(ir)[%f] = %f¥n", i, returnValues[i]);
+	    System.out.printf("returnValues(ir)[%d] = %f\n", i, returnValues[i]);
 	}
+	*/
 	return returnValues;
     }
 }

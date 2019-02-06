@@ -12,8 +12,8 @@ public class MainProcessController {
     // 定数定義
     private static final Port SENSORPORT_IRSEEKER = SensorPort.S1;	// 赤外線センサーポート
     private static final Port SENSORPORT_SONAR = SensorPort.S2;		// 超音波センサーポート
-    private static final Port SENSORPORT_SERIAL_SEND = SensorPort.S3;	// シリアル通信(送信)ポート
-    private static final Port SENSORPORT_SERIAL_RECV = SensorPort.S4;	// シリアル通信(受信)ポート
+    private static final Port SENSORPORT_SERIAL_SEND = SensorPort.S1;	// シリアル通信(送信)ポート
+    private static final Port SENSORPORT_SERIAL_RECV = SensorPort.S2;	// シリアル通信(受信)ポート
     private static final Port MOTORPORT_LEFT = MotorPort.A;		// 左モーターポート
     private static final Port MOTORPORT_RIGHT = MotorPort.B;		// 右モーターポート
     private static final Port MOTORPORT_DRIBBLE = MotorPort.D;		// ドリブルモーターポート
@@ -34,17 +34,17 @@ public class MainProcessController {
     }
 
     public MainProcessController() {
-	irSeekerController = new IrSeekerController(SENSORPORT_IRSEEKER);
-	//legMotorsController = new LegMotorsController(MOTORPORT_LEFT, MOTORPORT_RIGHT);
+	//irSeekerController = new IrSeekerController(SENSORPORT_IRSEEKER);
+	legMotorsController = new LegMotorsController(MOTORPORT_LEFT, MOTORPORT_RIGHT);
 	//ultrasonicSensorController = new UltrasonicSensorController(SENSORPORT_SONAR);
 	usbController = new USBController(SENSORPORT_SERIAL_SEND, SENSORPORT_SERIAL_RECV);
 	ev3 = (EV3) BrickFinder.getLocal();
 	lcd = ev3.getTextLCD();
-	//dribbleMotor = new EV3LargeRegulatedMotor(MOTORPORT_DRIBBLE);
+	dribbleMotor = new EV3LargeRegulatedMotor(MOTORPORT_DRIBBLE);
 	// スピード設定
-	//dribbleMotor.setSpeed((int) dribbleMotor.getMaxSpeed());
+	dribbleMotor.setSpeed((int) dribbleMotor.getMaxSpeed());
 	// ドリブルモーター始動
-	//dribbleMotor.forward();
+	dribbleMotor.forward();
     }
 
     public void execMainProcess() {
@@ -58,6 +58,7 @@ public class MainProcessController {
 	// 足回りモータのパワーを設定する
 	setLegMotorsPower();
 	Delay.msDelay(DELAY_MS_MAIN_LOOP);
+	Delay.msDelay(1000);
     }
 
     /*
@@ -114,8 +115,9 @@ public class MainProcessController {
      * ! センサーの値をシリアル通信でラズパイに送る
      */
     private void sendSensorValue() {
-	int irAngle = irSeekerController.getIrSeekerAngleByInt();
+	//int irAngle = irSeekerController.getIrSeekerAngleByInt();
 	//float uSonicDis = ultrasonicSensorController.getSonarDistance();
+	int irAngle = 0;
 	float uSonicDis = 0.5f;
 	lcd.drawString("ANGLE = " + irAngle, 1, 0);
 	lcd.drawString("uSONIC = " + uSonicDis, 1, 1);
