@@ -32,6 +32,9 @@ public class UltrasonicSensorController {
      */
     public final float getSonarDistance() {
         distanceMode.fetchSample(sampleDistance, 0);
+        if(Float.isInfinite(sampleDistance[0])) {
+            return 100.f;
+        }
         return sampleDistance[0];
     }
 }

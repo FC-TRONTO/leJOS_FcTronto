@@ -11,8 +11,8 @@ import lejos.utility.Delay;
 
 public class MainProcessController {
     // 定数定義
-    private static final Port SENSORPORT_IRSEEKER = SensorPort.S1;	// 赤外線センサーポート
-    private static final Port SENSORPORT_SONAR = SensorPort.S2;		// 超音波センサーポート
+    private static final Port SENSORPORT_IRSEEKER = SensorPort.S3;	// 赤外線センサーポート
+    private static final Port SENSORPORT_SONAR = SensorPort.S4;		// 超音波センサーポート
     private static final Port SENSORPORT_SERIAL_SEND = SensorPort.S1;	// シリアル通信(送信)ポート
     private static final Port SENSORPORT_SERIAL_RECV = SensorPort.S2;	// シリアル通信(受信)ポート
     private static final Port MOTORPORT_LEFT = MotorPort.A;		// 左モーターポート
@@ -40,15 +40,15 @@ public class MainProcessController {
 	lcd = ev3.getTextLCD();
 	audio = ev3.getAudio();
 	
-	//irSeekerController = new IrSeekerController(SENSORPORT_IRSEEKER);
+	irSeekerController = new IrSeekerController(SENSORPORT_IRSEEKER);
 	legMotorsController = new LegMotorsController(MOTORPORT_LEFT, MOTORPORT_RIGHT);
-	//ultrasonicSensorController = new UltrasonicSensorController(SENSORPORT_SONAR);
+	ultrasonicSensorController = new UltrasonicSensorController(SENSORPORT_SONAR);
 	usbController = new USBController(SENSORPORT_SERIAL_SEND, SENSORPORT_SERIAL_RECV, audio);
 	dribbleMotor = new EV3LargeRegulatedMotor(MOTORPORT_DRIBBLE);
 	// スピード設定
 	dribbleMotor.setSpeed((int) dribbleMotor.getMaxSpeed());
 	// ドリブルモーター始動
-	dribbleMotor.forward();
+	dribbleMotor.backward();
     }
 
     public void execMainProcess() {
@@ -57,12 +57,13 @@ public class MainProcessController {
 	Thread serialReadThread = new Thread(usbController);
 	// スレッドの処理を開始し、シリアル通信受信を開始する
 	serialReadThread.start();
-	// センサーの値をシリアル通信で送る
-	sendSensorValue();
-	// 足回りモータのパワーを設定する
-	setLegMotorsPower();
-	Delay.msDelay(DELAY_MS_MAIN_LOOP);
-	Delay.msDelay(1000);
+	while(true) {
+	    // センサーの値をシリアル通信で送る
+	    sendSensorValue();
+	    // 足回りモータのパワーを設定する
+	    setLegMotorsPower();
+	    Delay.msDelay(DELAY_MS_MAIN_LOOP);
+	}
     }
 
     /*
@@ -119,10 +120,10 @@ public class MainProcessController {
      * ! センサーの値をシリアル通信でラズパイに送る
      */
     private void sendSensorValue() {
-	//int irAngle = irSeekerController.getIrSeekerAngleByInt();
-	//float uSonicDis = ultrasonicSensorController.getSonarDistance();
-	int irAngle = 0;
-	float uSonicDis = 0.5f;
+	int irAngle = irSeekerController.getIrSeekerAngleByInt();
+	float uSonicDis = ultrasonicSensorController.getSonarDistance();
+	//int irAngle = 0;
+	//float uSonicDis = 0.5f;
 	lcd.drawString("ANGLE = " + irAngle, 1, 0);
 	lcd.drawString("uSONIC = " + uSonicDis, 1, 1);
 	String sendText = String.valueOf(irAngle) + "," + String.valueOf(uSonicDis) + "\n";

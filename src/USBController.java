@@ -80,8 +80,10 @@ public class USBController implements Runnable {
 		    totalLen++;
 		}
 	    }
+	    /*
 	    audio.playTone(659, 100);
 	    audio.playTone(880, 100);
+	    */
 	} catch (IOException e) {
 	    // TODO 自動生成された catch ブロック
 	    e.printStackTrace();
