@@ -12,7 +12,7 @@ import lejos.utility.Delay;
 public class MainProcessController {
     // 定数定義
     private static final Port SENSORPORT_IRSEEKER = SensorPort.S3;	// 赤外線センサーポート
-    private static final Port SENSORPORT_SONAR = SensorPort.S4;		// 超音波センサーポート
+    private static final Port SENSORPORT_TOUCH = SensorPort.S4;		// タッチセンサーポート
     private static final Port SENSORPORT_SERIAL_SEND = SensorPort.S1;	// シリアル通信(送信)ポート
     private static final Port SENSORPORT_SERIAL_RECV = SensorPort.S2;	// シリアル通信(受信)ポート
     private static final Port MOTORPORT_LEFT = MotorPort.A;		// 左モーターポート
@@ -29,6 +29,7 @@ public class MainProcessController {
     private TextLCD lcd;
     private Audio audio;
     private USBController usbController;
+    private TouchDetector touchDetector;
     RegulatedMotor dribbleMotor;
 
     private enum MainStateE {
@@ -42,7 +43,7 @@ public class MainProcessController {
 	
 	irSeekerController = new IrSeekerController(SENSORPORT_IRSEEKER);
 	legMotorsController = new LegMotorsController(MOTORPORT_LEFT, MOTORPORT_RIGHT);
-	ultrasonicSensorController = new UltrasonicSensorController(SENSORPORT_SONAR);
+	touchDetector = new TouchDetector(SENSORPORT_TOUCH);
 	usbController = new USBController(SENSORPORT_SERIAL_SEND, SENSORPORT_SERIAL_RECV, audio);
 	dribbleMotor = new EV3LargeRegulatedMotor(MOTORPORT_DRIBBLE);
 	// スピード設定
@@ -121,12 +122,10 @@ public class MainProcessController {
      */
     private void sendSensorValue() {
 	int irAngle = irSeekerController.getIrSeekerAngleByInt();
-	float uSonicDis = ultrasonicSensorController.getSonarDistance();
-	//int irAngle = 0;
-	//float uSonicDis = 0.5f;
+	int isPressedInt = convertBooleanToInt(touchDetector.getIsPressed());
 	lcd.drawString("ANGLE = " + irAngle, 1, 0);
-	lcd.drawString("uSONIC = " + uSonicDis, 1, 1);
-	String sendText = String.valueOf(irAngle) + "," + String.valueOf(uSonicDis) + "\n";
+	lcd.drawString("PRESS = " + isPressedInt, 1, 1);
+	String sendText = String.valueOf(irAngle) + "," + String.valueOf(isPressedInt) + "\n";
 	usbController.write(sendText);
     }
 
@@ -138,5 +137,13 @@ public class MainProcessController {
 	lcd.drawString("LEFT_MOTOR = " + motorPowers[0], 1, 2);
 	lcd.drawString("RIGIT_MOTOR = " + motorPowers[1], 1, 3);
 	legMotorsController.setMotorPower(motorPowers[0], motorPowers[1]);
+    }
+    
+    private int convertBooleanToInt(boolean state) {
+	if(state) {
+	    return 1;
+	}else {
+	    return 0;
+	}
     }
 }
