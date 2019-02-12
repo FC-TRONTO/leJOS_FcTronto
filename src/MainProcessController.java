@@ -21,6 +21,7 @@ public class MainProcessController {
     private static final float THRESHOLD_BALL_DETECT = 0.05f;
     private static final int CORRECTION_VALUE_SPEED = 10;
     private static final int DELAY_MS_MAIN_LOOP = 100; 			// メイン関数のループ間隔[ms]
+    private static final int CORRECTION_VALUE_ANGLE = -1;		// 角度補正値(逆さまにつけているときは-1にする)
 
     private IrSeekerController irSeekerController;
     private LegMotorsController legMotorsController;
@@ -121,7 +122,7 @@ public class MainProcessController {
      * ! センサーの値をシリアル通信でラズパイに送る
      */
     private void sendSensorValue() {
-	int irAngle = irSeekerController.getIrSeekerAngleByInt();
+	int irAngle = CORRECTION_VALUE_ANGLE * irSeekerController.getIrSeekerAngleByInt();
 	int isPressedInt = convertBooleanToInt(touchDetector.getIsPressed());
 	lcd.drawString("ANGLE = " + irAngle, 1, 0);
 	lcd.drawString("PRESS = " + isPressedInt, 1, 1);
