@@ -138,6 +138,12 @@ public class MainProcessController {
 	lcd.drawString("LEFT_MOTOR = " + motorPowers[0], 1, 2);
 	lcd.drawString("RIGIT_MOTOR = " + motorPowers[1], 1, 3);
 	legMotorsController.setMotorPower(motorPowers[0], motorPowers[1]);
+	if(motorPowers[0] == 0 && motorPowers[1] == 0) {
+	    // ドリブルモーター止める
+	    dribbleMotor.stop();
+	}else {
+	    dribbleMotor.backward();
+	}
     }
     
     private int convertBooleanToInt(boolean state) {
